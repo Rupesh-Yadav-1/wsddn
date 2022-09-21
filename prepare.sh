@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd wsddn.pytorch
 # download and extract VOC 2007 trainval split
 # use one of the following
 #wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar -P data/
