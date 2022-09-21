@@ -25,5 +25,5 @@ if __name__ == "__main__":
     tqdm.write("State is loaded")
 
     test_ds = VocAndEb("test")  # len = 4952
-    test_dl = DataLoader(test_ds, batch_size=None, shuffle=False, num_workers=4)
+    test_dl = DataLoader(test_ds, batch_size=None, shuffle=False, num_workers=2)
     evaluate(net, test_dl)
