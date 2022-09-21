@@ -7,7 +7,7 @@ from datetime import datetime
 import numpy as np
 import torch
 from albumentations import BboxParams, Compose, HorizontalFlip, LongestMaxSize
-from albumentations.pytorch.transforms import ToTensor
+from albumentations.pytorch.transforms import ToTensor, ToTensorV2
 from chainercv.evaluations import eval_detection_voc
 from PIL import Image
 from torchvision import transforms
@@ -49,9 +49,7 @@ def prepare(img, boxes, max_dim=None, xflip=False, gt_boxes=None, gt_labels=None
         [
             LongestMaxSize(max_size=max_dim),
             HorizontalFlip(p=float(xflip)),
-            ToTensor(
-                normalize=dict(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-            ),
+            ToTensorV2(),
         ]
     )
     augmented = aug(
