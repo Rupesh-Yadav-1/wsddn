@@ -4,6 +4,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 from torchvision.models import alexnet, vgg16
+from torchvision.models.efficientnet import Weights
 from torchvision.ops import roi_pool
 
 from utils import BASE_DIR
@@ -18,11 +19,11 @@ class WSDDN(nn.Module):
         self.base_net = base_net
 
         if self.base_net == "alexnet":
-            self.base = alexnet(pretrained=False)
+            self.base = alexnet(weights=False)
             state_path = os.path.join(BASE_DIR, "states", "alexnet-owt-4df8aa71.pth")
             self.roi_output_size = (6, 6)
         else:
-            self.base = vgg16(pretrained=False)
+            self.base = vgg16(weights=False)
             state_path = os.path.join(BASE_DIR, "states", "vgg16-397923af.pth")
             self.roi_output_size = (7, 7)
 
