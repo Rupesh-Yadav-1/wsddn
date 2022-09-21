@@ -1,6 +1,6 @@
 # WSDDN
 
-Implementation of `Weakly Supervised Deep Detection Networks` using the latest version of PyTorch.
+Implementation of `Weakly Supervised Deep Detection Networks` using PyTorch on Google Colab.
 
 _`Bilen, H., & Vedaldi, A. (2016). Weakly supervised deep detection networks. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 2846-2854).`_
 
