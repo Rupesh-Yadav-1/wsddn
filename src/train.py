@@ -51,8 +51,8 @@ if __name__ == "__main__":
     train_ds = VocAndEb("trainval")  # len = 5011
     test_ds = VocAndEb("test")  # len = 4952
 
-    train_dl = DataLoader(train_ds, batch_size=1, shuffle=True, num_workers=4)
-    test_dl = DataLoader(test_ds, batch_size=None, shuffle=False, num_workers=4)
+    train_dl = DataLoader(train_ds, batch_size=1, shuffle=True, num_workers=2)
+    test_dl = DataLoader(test_ds, batch_size=None, shuffle=False, num_workers=2)
 
     # Create the network
     net = WSDDN(base_net=args.base_net)
