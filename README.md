@@ -1,4 +1,4 @@
-# WSDDN PyTorch
+# WSDDN
 
 Implementation of `Weakly Supervised Deep Detection Networks` using the latest version of PyTorch.
 
@@ -27,29 +27,29 @@ _`Bilen, H., & Vedaldi, A. (2016). Weakly supervised deep detection networks. In
 
 ## Requirements
 
-- Docker (19.03.2)
-- nvidia-container-toolkit (https://github.com/NVIDIA/nvidia-docker)
+Google Colab
 
 ## Build Steps
 
 ```bash
-git clone git@github.com:adursun/wsddn.pytorch.git
-cd wsddn.pytorch
-./prepare.sh
-docker run --rm --gpus all --ipc=host -v `pwd`:/ws -it wsddn.pytorch /bin/bash
+!git clone https://github.com/Rupesh-Yadav-1/wsddn.git
+!bash /content/wsddn/prepare.sh
+!pip install --upgrade pip==19.3
+!pip install -r "/content/wsddn/requirements.txt"
+!pip install 'cupy-cuda111>=7.7.0,<=8.1.0'
 ```
 
 ## Training Steps
 
 ```bash
 # for VGG based model
-python src/train.py --base_net vgg
+!python /content/wsddn/src/train.py --base_net vgg
 ```
 
 ## Evaluation Steps
 
 ```bash
 # for VGG based model
-# run `wget "https://www.dropbox.com/s/xyi4hgms6y3ldmj/vgg_epoch_20.pt?dl=1" -P states/` to use pretrained weights
-python src/evaluate.py --base_net vgg --state_path states/vgg_epoch_20.pt
+# run `wget "https://www.dropbox.com/s/xyi4hgms6y3ldmj/vgg_epoch_20.pt?dl=1" -P /content/wsddn/states/` to use pretrained weights
+python /content/wsddn/src/evaluate.py --base_net vgg --state_path states/vgg_epoch_20.pt
 ```
