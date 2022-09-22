@@ -19,11 +19,11 @@ class WSDDN(nn.Module):
         self.base_net = base_net
 
         if self.base_net == "alexnet":
-            self.base = alexnet(weights=False)
+            self.base = alexnet(weights=None)  ##weights=False
             state_path = os.path.join(BASE_DIR, "states", "alexnet-owt-4df8aa71.pth")
             self.roi_output_size = (6, 6)
         else:
-            self.base = vgg16(weights=False)
+            self.base = vgg16(weights=None)    ##weights=False
             state_path = os.path.join(BASE_DIR, "states", "vgg16-397923af.pth")
             self.roi_output_size = (7, 7)
 
