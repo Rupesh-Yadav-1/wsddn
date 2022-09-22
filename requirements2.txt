@@ -1,0 +1,14 @@
+matplotlib
+torch
+torchvision
+scipy
+chainer
+chainercv
+Pillow
+jupyter
+black
+isort
+albumentations
+Cython
+rope
+tqdm
