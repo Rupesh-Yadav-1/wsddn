@@ -1,3 +1,5 @@
+The whole code is taken from https://github.com/adursun/wsddn.pytorch.git and modified to use on Google Colab
+
 # WSDDN
 
 Implementation of `Weakly Supervised Deep Detection Networks` using PyTorch on Google Colab.
