@@ -34,9 +34,6 @@ Google Colab
 ```bash
 !git clone https://github.com/Rupesh-Yadav-1/wsddn.git
 !bash /content/wsddn/prepare.sh
-!pip install --upgrade pip==19.3
-!pip install -r "/content/wsddn/requirements.txt"
-!pip install 'cupy-cuda111>=7.7.0,<=8.1.0'
 ```
 
 ## Training Steps
