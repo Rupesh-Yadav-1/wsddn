@@ -26,3 +26,6 @@ wget https://download.pytorch.org/models/vgg16-397923af.pth -P /content/wsddn/st
 
 # download pretrained alexnet based wsddn weights
 wget https://www.dropbox.com/s/lifv1ywa98a2p4y/alexnet_epoch_20.pt -P /content/wsddn/states/
+
+# download pretrained vgg based wsddn weights
+wget "https://www.dropbox.com/s/xyi4hgms6y3ldmj/vgg_epoch_20.pt?dl=1" -P /content/wsddn/states/
