@@ -14,6 +14,7 @@ from torchvision import transforms
 from torchvision.ops import nms
 from tqdm import tqdm
 import selectivesearch
+import cv2
 
 # this is duplicate
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
