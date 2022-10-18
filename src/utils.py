@@ -13,6 +13,7 @@ from PIL import Image
 from torchvision import transforms
 from torchvision.ops import nms
 from tqdm import tqdm
+import selectivesearch
 
 # this is duplicate
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
@@ -173,3 +174,22 @@ def np2gpu(arr, device):
     """Creates torch array from numpy one."""
     arr = np.expand_dims(arr, axis=0)
     return torch.from_numpy(arr).to(device)
+
+def ssw(img,scale=400,sigma=0.7,min_size=20):
+    img = cv2.cvtColor(np.asarray(img), cv2.COLOR_RGB2BGR)
+    # resize_img = cv2.resize(img, tuple(input_size))
+    img_lbl,regions=selectivesearch.selective_search(img,scale=scale,sigma=sigma,min_size=min_size)
+    candidates = set()
+    for r in regions:
+        # excluding same rectangle (with different segments)
+        if r['rect'] in candidates:
+            continue
+        # excluding regions smaller than 2000 pixels
+        if r['size'] < 1500:
+            continue
+        x, y, w, h = r['rect']
+        # distorted rects
+        #if w  > 1.2*h or h > 1.2* w :
+        #    continue
+        candidates.add(r['rect'])
+    return candidates
