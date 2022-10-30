@@ -43,7 +43,7 @@ class WSDDN(nn.Module):
         out = roi_pool(out, batch_boxes, self.roi_output_size, 1.0 / 16)
         out = out.view(len(batch_boxes[0]), -1)
         
-        if batch_scores:
+        if batch_scores != None:
           out = out * batch_scores[0]  # apply box scores
         
         out = out * batch_scores[0]  # apply box scores
