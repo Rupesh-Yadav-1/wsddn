@@ -1,4 +1,4 @@
-The whole code is taken from https://github.com/adursun/wsddn.pytorch.git and modified.
+The code is taken from https://github.com/adursun/wsddn.pytorch.git and modified.
 
 # WSDDN
 
